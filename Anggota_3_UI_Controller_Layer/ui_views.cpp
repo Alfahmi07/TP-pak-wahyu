@@ -15,11 +15,39 @@
 #include <limits>
 #include <cmath>
 
+#if defined(_WIN32) || defined(_WIN64)
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+#include <windows.h>
+#endif
+
 namespace CampingRental {
+
+    void UIViews::enableVirtualTerminal() {
+#if defined(_WIN32) || defined(_WIN64)
+        static bool initialized = false;
+        if (!initialized) {
+            HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+            if (hOut != INVALID_HANDLE_VALUE) {
+                DWORD dwMode = 0;
+                if (GetConsoleMode(hOut, &dwMode)) {
+                    dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+                    SetConsoleMode(hOut, dwMode);
+                }
+            }
+            initialized = true;
+        }
+#endif
+    }
 
     void UIViews::clearScreen() {
 #if defined(_WIN32) || defined(_WIN64)
         std::system("cls");
+        enableVirtualTerminal();
 #else
         std::system("clear");
 #endif
@@ -71,17 +99,22 @@ namespace CampingRental {
     }
 
     void UIViews::printMainBanner() {
+        enableVirtualTerminal();
+        std::cout << ConsoleColor::BLUE;
         std::cout << "=========================================================================================\n";
         std::cout << "    /\\_ /\\      CAMPING GEAR RENTAL HUB - SISTEM PENYEWAAN ALAT CAMPING                  \n";
         std::cout << "   (  . .)     Penyewaan Alat Outdoor Terlengkap: Tenda, Carrier, Kompor & Sleeping Bag \n";
         std::cout << "    >  ^ <      Bersih, Terawat, Berkualitas Tinggi, & Siap Menemani Ekspedisi Anda!     \n";
         std::cout << "=========================================================================================\n";
+        std::cout << ConsoleColor::RESET;
     }
 
     void UIViews::printSectionHeader(const std::string& title) {
+        std::cout << ConsoleColor::BLUE;
         std::cout << "\n+---------------------------------------------------------------------------------------+\n";
         std::cout << "| " << padRight(">> " + title, 85) << " |\n";
         std::cout << "+---------------------------------------------------------------------------------------+\n";
+        std::cout << ConsoleColor::RESET;
     }
 
     void UIViews::printSubHeader(const std::string& title) {
@@ -89,11 +122,11 @@ namespace CampingRental {
     }
 
     void UIViews::printSuccessBox(const std::string& message) {
-        std::cout << "\n[BERHASIL] " << message << "\n";
+        std::cout << "\n" << ConsoleColor::GREEN << "[BERHASIL] " << message << ConsoleColor::RESET << "\n";
     }
 
     void UIViews::printErrorBox(const std::string& message) {
-        std::cout << "\n[PERINGATAN/GAGAL] " << message << "\n";
+        std::cout << "\n" << ConsoleColor::RED << "[PERINGATAN/GAGAL] " << message << ConsoleColor::RESET << "\n";
     }
 
     void UIViews::printInfoBox(const std::string& message) {
@@ -109,9 +142,9 @@ namespace CampingRental {
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     return val;
                 }
-                std::cout << "Input harus antara " << minVal << " sampai " << maxVal << "!\n";
+                std::cout << ConsoleColor::RED << "Input harus antara " << minVal << " sampai " << maxVal << "!" << ConsoleColor::RESET << "\n";
             } else {
-                std::cout << "Input tidak valid! Harap masukkan angka bulat.\n";
+                std::cout << ConsoleColor::RED << "Input tidak valid! Harap masukkan angka bulat." << ConsoleColor::RESET << "\n";
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
@@ -127,9 +160,9 @@ namespace CampingRental {
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     return val;
                 }
-                std::cout << "Input harus antara " << formatRupiah(minVal) << " sampai " << formatRupiah(maxVal) << "!\n";
+                std::cout << ConsoleColor::RED << "Input harus antara " << formatRupiah(minVal) << " sampai " << formatRupiah(maxVal) << "!" << ConsoleColor::RESET << "\n";
             } else {
-                std::cout << "Input tidak valid! Harap masukkan angka numerik.\n";
+                std::cout << ConsoleColor::RED << "Input tidak valid! Harap masukkan angka numerik." << ConsoleColor::RESET << "\n";
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
@@ -144,7 +177,7 @@ namespace CampingRental {
             if (allowEmpty || !input.empty()) {
                 return input;
             }
-            std::cout << "Input tidak boleh kosong!\n";
+            std::cout << ConsoleColor::RED << "Input tidak boleh kosong!" << ConsoleColor::RESET << "\n";
         }
     }
 
@@ -453,8 +486,10 @@ namespace CampingRental {
 
     void UIViews::printMainMenu() {
         printMainBanner();
-        std::cout << "  SELAMAT DATANG DI APLIKASI PENYEWAAN ALAT CAMPING\n";
-        std::cout << "  -------------------------------------------------\n";
+        std::cout << ConsoleColor::BLUE
+                  << "  SELAMAT DATANG DI APLIKASI PENYEWAAN ALAT CAMPING\n"
+                  << "  -------------------------------------------------\n"
+                  << ConsoleColor::RESET;
         std::cout << "  [1] Masuk ke Akun (Login)\n";
         std::cout << "  [2] Registrasi Akun Pelanggan Baru\n";
         std::cout << "  [3] Lihat Katalog Alat Camping (Mode Tamu/Guest)\n";
@@ -465,8 +500,10 @@ namespace CampingRental {
 
     void UIViews::printUserDashboardMenu(const std::string& customerName, int cartItemCount) {
         printMainBanner();
-        std::cout << "  PANEL PELANGGAN | Halo, " << customerName << "!\n";
-        std::cout << "  ===================================================================\n";
+        std::cout << ConsoleColor::BLUE
+                  << "  PANEL PELANGGAN | Halo, " << customerName << "!\n"
+                  << "  ===================================================================\n"
+                  << ConsoleColor::RESET;
         std::cout << "  [1] Katalog Alat Camping (Cari, Filter, Urutkan, & Sewa)\n";
         std::cout << "  [2] Keranjang Penyewaan [" << cartItemCount << " Item]\n";
         std::cout << "  [3] Transaksi & Checkout (Pilih Tanggal, Kupon Promo & Pembayaran)\n";
@@ -480,8 +517,10 @@ namespace CampingRental {
 
     void UIViews::printAdminDashboardMenu(const std::string& adminName) {
         printMainBanner();
-        std::cout << "  PANEL ADMINISTRATOR TOKO | Administrator: " << adminName << "\n";
-        std::cout << "  ===================================================================\n";
+        std::cout << ConsoleColor::BLUE
+                  << "  PANEL ADMINISTRATOR TOKO | Administrator: " << adminName << "\n"
+                  << "  ===================================================================\n"
+                  << ConsoleColor::RESET;
         std::cout << "  [1] Manajemen Inventaris Alat (Tambah, Edit, Restock, Hapus, Cari)\n";
         std::cout << "  [2] Manajemen Transaksi Sewa (Verifikasi Bayar, Serah Unit, Filter)\n";
         std::cout << "  [3] Pengembalian Alat & Kalkulasi Denda (Inspeksi Fisik & Deposit)\n";

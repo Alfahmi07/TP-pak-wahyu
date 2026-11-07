@@ -17,6 +17,7 @@
 #include <cctype>
 #include <algorithm>
 #include <cmath>
+#include <cstdint>
 
 namespace CampingRental {
 
