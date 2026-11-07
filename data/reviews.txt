@@ -1,0 +1,5 @@
+# Database Ulasan dan Rating Produk
+# Format: ID|GearId|UserId|Username|Rating|ReviewText|ReviewDate
+1|1|2|budi|5|Tenda Eiger Guardian mantap banget, waktu badai di gunung gak bocor sama sekali!|2026-11-04
+2|5|2|budi|5|Sleeping bag bersih dan wangi banget. Bikin tidur nyenyak di suhu dingin.|2026-11-04
+3|8|3|siti|5|Osprey Atmos benar-benar anti gravitasi, beban 15kg serasa enteng di punggung.|2026-10-25

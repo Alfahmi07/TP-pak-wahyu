@@ -1,0 +1,23 @@
+# Database Inventaris Alat Camping
+# Format: ID|SKU|Name|Brand|Category|PricePerDay|ReplacementValue|StockTotal|StockAvail|TimesRented|Rating|ReviewCount|Spec|Notes
+1|TND-001|Tenda Eiger Guardian 4P|Eiger|Tenda & Shelter|50000|1250000|8|6|24|4.9|18|Kapasitas 4 orang, double layer waterproof 3000mm, alloy pole|Kondisi sangat mulus, pasak lengkap
+2|TND-002|Tenda Consina Magnum 4|Consina|Tenda & Shelter|45000|950000|10|8|30|4.7|22|Kapasitas 4-5 orang, teras depan luas, bahan polyester PU 2500mm|Bersih, jahitan rapi
+3|TND-003|Tenda Naturehike Cloud Up 2 Ultralight|Naturehike|Tenda & Shelter|40000|1100000|6|5|15|4.8|12|Kapasitas 2 orang ultralight 1.7kg, 20D silicone coated 4000mm|Sangat prima, frame utuh
+4|TND-004|Quechua Arpenaz Family 4.1 Fresh & Black|Quechua|Tenda & Shelter|75000|2100000|4|3|10|5.0|9|Kapasitas 4 orang 1 kamar + ruang santai, teknologi adem gelap|Terawat, minus sablon pudar sedikit
+5|SLP-001|Sleeping Bag Arei Everest Polar|Arei|Sleeping Gear|15000|220000|15|12|45|4.6|28|Lapisan dalam polar bulu hangat, limit suhu 5 derajat Celcius|Harum laundry, ritsleting lancar
+6|SLP-002|Sleeping Bag Deuter Orbit +5 Mummy|Deuter|Sleeping Gear|25000|750000|8|7|20|4.9|14|Model kepompong insulasi thermal sintetis high grade, berat 1kg|Kondisi prima seperti baru
+7|SLP-003|Matras Alumunium Foil Double Side|Wildshell|Sleeping Gear|7500|65000|20|18|55|4.5|30|Reflektor panas tubuh, busa empuk 4mm, waterproof|Bagus, lipatan rapi
+8|BAG-001|Carrier Osprey Atmos AG 65L|Osprey|Carrier & Tas|60000|3400000|5|4|18|5.0|16|Anti-Gravity suspension backsystem, include raincover asli|Sangat mulus, busa punggung tebal
+9|BAG-002|Carrier Consina Tarebbi 60L|Consina|Carrier & Tas|30000|650000|12|9|40|4.6|25|Bahan cordura tahan banting, kompartemen utama luas|Kuat, siap jelajah hutan
+10|BAG-003|Carrier Eiger Rhinos 60L|Eiger|Carrier & Tas|35000|950000|10|8|35|4.8|20|Sistem sirkulasi udara tropic flow, buckle acetal tangguh|Terawat baik, warna cerah
+11|CKG-001|Kompor Ultralight Windproof Kovar|Kovar|Alat Masak & Kompor|12000|130000|15|13|50|4.7|32|Pelindung angin model bunga mekar, pemantik piezo elektrik|Api biru stabil, bersih
+12|CKG-002|Nesting Cooking Set DS-308 (4-5 Org)|Alocs|Alat Masak & Kompor|20000|260000|10|8|38|4.8|26|3 panci aluminium anodized + 1 teko 0.8L + mangkok & spons|Lengkap dengan tas jaring, non-stick
+13|CKG-003|Gas Kaleng Portable Hi-Cook 230g|Hi-Cook|Alat Masak & Kompor|15000|25000|30|26|80|4.9|45|Gas butana murni bersegel pabrik untuk kompor portable|Segel baru 100%
+14|LGT-001|Headlamp Petzl Tikka 350 Lumens|Petzl|Penerangan & Lentera|20000|450000|10|9|28|4.9|19|3 level cahaya putih + mode merah malam, waterproof IPX4|Baterai awet, strap elastis
+15|LGT-002|Lentera Tenda LED Rechargeable Solar|Naturehike|Penerangan & Lentera|15000|180000|12|10|33|4.7|21|Bisa dicharge USB Type-C & matahari, fungsi powerbank darurat|Terang benderang, baterai sehat
+16|SFT-001|Trekking Pole Duralumin Naturehike|Naturehike|Navigasi & Safety|10000|150000|16|13|42|4.8|24|Material duralumin 7075 kuat & ringan, pengunci quick lock|Peredam getar normal, ujung karbida
+17|SFT-002|HT Walkie Talkie Baofeng UV-5R Dual Band|Baofeng|Navigasi & Safety|25000|350000|8|6|22|4.8|15|Jangkauan 3-5 km di alam terbuka, include headset & charger|Frekuensi jernih, baterai tahan lama
+18|SFT-003|Kotak P3K Outdoor First Aid Kit Lengkap|OutdoorMedic|Navigasi & Safety|10000|120000|12|11|25|4.9|17|Perban elastis, plester, povidone, alkohol pads, gunting, mitela|Steril, isi obat kadaluarsa 2028
+19|CFT-001|Hammock Double Layer Ticket to the Moon|TTTM|Outdoor Comfort|20000|320000|10|8|36|4.9|27|Kain sutra parasut elastis tahan beban 200kg, include webbing|Bahan lembut dan bersih
+20|CFT-002|Kursi Lipat Duralumin Ultralight|Dhaulagiri|Outdoor Comfort|15000|195000|14|11|40|4.7|28|Kapasitas beban 120kg, rangka aluminium alloy lipat ringkas|Kokoh, tidak goyang
+21|CFT-003|Meja Lipat Aluminium Portable Camping|Speed|Outdoor Comfort|20000|240000|8|6|26|4.8|18|Meja gulung aluminium ukuran 56x40 cm, anti karat & panas|Stabil, engsel berfungsi sempurna

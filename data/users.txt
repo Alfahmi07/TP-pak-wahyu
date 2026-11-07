@@ -1,0 +1,6 @@
+# Database Pengguna Sistem Penyewaan Alat Camping
+# Format: ID|Username|PasswordHash|FullName|Phone|Email|IDCard|Address|Role|Status|RentalsCount|TrustScore|RegDate
+1|admin|admin123|Administrator Utama|081122334455|admin@campingrental.id|3271010101900001|Jl. Rinjani No. 10, Bandung|ADMIN|AKTIF|0|100.0|2026-01-01
+2|budi|budi123|Budi Santoso|081234567890|budi@gmail.com|3271011505950002|Jl. Dago Asri No. 45, Bandung|USER|AKTIF|3|98.5|2026-02-15
+3|siti|siti123|Siti Aminah|081398765432|siti.outdoor@yahoo.com|3271014208980003|Jl. Gejayan No. 12, Sleman|USER|AKTIF|5|100.0|2026-03-10
+4|andi|andi123|Andi Wijaya|081765432109|andi.wijaya@outlook.com|3271012304990004|Jl. Dipati Ukur No. 88, Bandung|USER|AKTIF|1|95.0|2026-05-20

@@ -1,0 +1,2 @@
+# Database Log Pengembalian dan Denda
+# Format: ID|Invoice|ReturnDate|OverdueDays|LateFee|DamageFee|TotalPenalty|DepositHeld|DepositRefund|ExtraPaymentDue|Admin|Notes
